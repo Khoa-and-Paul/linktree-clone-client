@@ -2,7 +2,27 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, install dependencies needed for this project
+
+```bash
+npm install
+```
+
+Second, install prisma
+
+```bash
+npm install prisma --save-dev
+```
+
+Then, create an .env file and populate these variables
+
+```
+# Clerk
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+```
+
+Finally, run the development server:
 
 ```bash
 npm run dev
