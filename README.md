@@ -17,6 +17,9 @@ npm install prisma --save-dev
 Then, create an .env file and populate these variables
 
 ```
+# Prisma
+DATABASE_URL=
+
 # Clerk
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
 CLERK_SECRET_KEY=
