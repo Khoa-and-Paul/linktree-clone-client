@@ -13,9 +13,9 @@ export default async function SetupLayout({
     redirect("/sign-in");
   }
 
-  const user = await prisma.links.findFirst({
+  const user = await prisma.users.findFirst({
     where: {
-      userId,
+      id: userId,
     },
   });
 

@@ -13,7 +13,7 @@ export async function GET(
     const { userId } = params;
     const links = await prisma.links.findMany({
       where: {
-        userId: Number(userId),
+        userId: userId,
       },
     });
     if (links) {
