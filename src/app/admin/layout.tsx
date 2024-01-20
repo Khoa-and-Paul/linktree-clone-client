@@ -1,8 +1,19 @@
-import React from 'react';
-import * as NavigationMenu from '@radix-ui/react-navigation-menu';
-import classNames from 'classnames';
-import { CaretDownIcon } from '@radix-ui/react-icons';
-import styles from './adminLayout.module.scss';
+"use client";
+
+import {
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuIndicator,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+    NavigationMenuViewport,
+  } from "@/src/components/navigation-menu";
+import Link from "next/link";
+import LinkTreeIcon from "@/src/components/icons/link-tree-icon";
+import LinkIcon from "@/src/components/icons/link-icon";
+import { cn } from "@/lib/utils"
 
 export default function AdminLayout({
     children,
@@ -11,34 +22,32 @@ export default function AdminLayout({
 }) {
     return (
         <>
-            <NavigationMenu.Root>
-                <NavigationMenu.List>
-                <NavigationMenu.Item>
-                    <NavigationMenu.Trigger />
-                    <NavigationMenu.Content>
-                    <NavigationMenu.Link />
-                    </NavigationMenu.Content>
-                </NavigationMenu.Item>
+            <NavigationMenu >
+                <NavigationMenuList>
+                    <NavigationMenuItem>
+                        <Link href="/" legacyBehavior passHref>
+                            <NavigationMenuLink><LinkTreeIcon color="#000000"/></NavigationMenuLink>
+                        </Link>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <Link href="/admin" legacyBehavior passHref>
+                            <NavigationMenuLink><LinkIcon color="#000000"/>Links</NavigationMenuLink>
+                        </Link>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <Link href="/admin/appearance" legacyBehavior passHref>
+                            <NavigationMenuLink>Appearance</NavigationMenuLink>
+                        </Link>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <Link href="/admin/analytics" legacyBehavior passHref>
+                            <NavigationMenuLink>Analytics</NavigationMenuLink>
+                        </Link>
+                    </NavigationMenuItem>
+                    <NavigationMenuIndicator />
+                </NavigationMenuList>
+            </NavigationMenu>
 
-                <NavigationMenu.Item>
-                    <NavigationMenu.Link />
-                </NavigationMenu.Item>
-
-                <NavigationMenu.Item>
-                    <NavigationMenu.Trigger />
-                    <NavigationMenu.Content>
-                    <NavigationMenu.Sub>
-                        <NavigationMenu.List />
-                        <NavigationMenu.Viewport />
-                    </NavigationMenu.Sub>
-                    </NavigationMenu.Content>
-                </NavigationMenu.Item>
-
-                <NavigationMenu.Indicator />
-                </NavigationMenu.List>
-
-                <NavigationMenu.Viewport />
-            </NavigationMenu.Root>
             <section className="bg-slate-50 w-screen h-dvh">
                 {children}
             </section>
