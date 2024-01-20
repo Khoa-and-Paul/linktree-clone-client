@@ -35,10 +35,10 @@ export async function PATCH(
   { params }: { params: { userId: string } }
 ) {
   try {
-    const userId = auth();
+    const { userId } = auth();
     const body = await req.json();
 
-    if(!userId) {
+    if (!userId) {
       return new NextResponse("Unauthenticated", { status: 403 });
     }
 
@@ -46,8 +46,17 @@ export async function PATCH(
 
     const user = await prisma.users.updateMany({
       where: {
-        id: userId
-      }
-    })
+        id: userId,
+      },
+      data: {
+        name,
+        imageUrl,
+      },
+    });
+
+    return NextResponse.json(user);
+  } catch (e) {
+    console.log("USER_PATCH", e);
+    return new NextResponse("Internal Error", { status: 500 });
   }
 }
