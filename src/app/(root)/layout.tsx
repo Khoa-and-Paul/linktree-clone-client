@@ -7,21 +7,21 @@ export default async function SetupLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { userId } = auth();
+  // const { userId } = auth();
 
-  if (!userId) {
-    redirect("/sign-in");
-  }
+  // if (!userId) {
+  //   redirect("/sign-in");
+  // }
 
-  const user = await prisma.links.findFirst({
-    where: {
-      userId,
-    },
-  });
+  // const user = await prisma.links.findFirst({
+  //   where: {
+  //     userId,
+  //   },
+  // });
 
-  if (user) {
-    redirect(`/${user.id}`);
-  }
+  // if (user) {
+  //   redirect(`/${user.id}`);
+  // }
 
   return <>{children}</>;
 }

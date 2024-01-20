@@ -11,25 +11,25 @@ export default async function DashboardLayout({
   children: React.ReactNode;
   params: { userId: string };
 }) {
-  const { userId } = auth();
-  if (!userId) {
-    redirect("/sign-in");
-  }
+  // const { userId } = auth();
+  // if (!userId) {
+  //   redirect("/sign-in");
+  // }
 
-  const user = await prisma.links.findFirst({
-    where: {
-      userId,
-    },
-  });
+  // const user = await prisma.links.findFirst({
+  //   where: {
+  //     userId,
+  //   },
+  // });
 
-  if (!user) {
-    redirect("/");
-  }
+  // if (!user) {
+  //   redirect("/");
+  // }
 
-  return (
-    <>
-      <NavBar />
-      {children}
-    </>
-  );
+  // return (
+  //   <>
+  //     <NavBar />
+  //     {children}
+  //   </>
+  // );
 }
