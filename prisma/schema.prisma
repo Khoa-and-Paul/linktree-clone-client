@@ -8,18 +8,22 @@ datasource db {
   relationMode = "prisma"
 }
 
-model Links {
-  id        Int       @id @default(autoincrement())
-  url       String?   @db.VarChar(255)
-  userId    String?
-  createdAt DateTime? @default(now()) @db.Timestamp(0)
-  updatedAt DateTime? @default(now()) @db.Timestamp(0)
+model Link {
+  id        String    @id @default(uuid())
+  url       String    @db.VarChar(255)
+  userId    String
+  user      User      @relation("UserToLink", fields: [userId], references: [id])
+  createdAt DateTime  @default(now()) @db.Timestamp(0)
+  updatedAt DateTime  @default(now()) @db.Timestamp(0)
+
+  @@index([userId])
 }
 
-model Users {
-  id        Int       @id @default(autoincrement())
+model User {
+  id        String    @id @default(uuid())
   imageUrl  String?   @db.VarChar(255)
-  name      String?   @db.VarChar(255)
-  createdAt DateTime? @default(now()) @db.Timestamp(0)
-  updatedAt DateTime? @default(now()) @db.Timestamp(0)
+  username  String    @db.VarChar(255)
+  links     Link[]    @relation("UserToLink")
+  createdAt DateTime  @default(now()) @db.Timestamp(0)
+  updatedAt DateTime  @default(now()) @db.Timestamp(0)
 }
