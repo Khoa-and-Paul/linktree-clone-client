@@ -45,7 +45,8 @@ const NavigationMenuItem = React.forwardRef<
   <NavigationMenuPrimitive.Item
     ref={ref}
     className={cn(
-      "max-w-fit hover:bg-slate-100 rounded-lg ease-in-out duration-200"
+      "max-w-fit hover:bg-slate-100 rounded-lg ease-in-out duration-200",
+      className
     )}
     {...props}
   />

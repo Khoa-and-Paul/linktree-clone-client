@@ -11,8 +11,13 @@ import {
   NavigationMenuViewport,
 } from "@/src/components/navigation-menu";
 import Link from "next/link";
-import { AppearanceIcon, LinkIcon, LinkTreeIcon } from "@/src/components/icons";
-import { cn } from "@/lib/utils";
+import {
+  AnalyticsIcon,
+  AppearanceIcon,
+  LinkIcon,
+  LinkTreeIcon,
+} from "@/src/components/icons";
+import { Avatar, AvatarImage, AvatarFallback } from "@/src/components/avatar";
 
 export default function AdminLayout({
   children,
@@ -22,8 +27,8 @@ export default function AdminLayout({
   return (
     <>
       <NavigationMenu>
-        <NavigationMenuList className={cn("my-2.5")}>
-          <NavigationMenuItem>
+        <NavigationMenuList className="my-2.5">
+          <NavigationMenuItem className="md:ml-4 hover:bg-transparent">
             <Link href="/" legacyBehavior passHref>
               <NavigationMenuLink>
                 <LinkTreeIcon color="#000000" />
@@ -48,8 +53,17 @@ export default function AdminLayout({
           </NavigationMenuItem>
           <NavigationMenuItem>
             <Link href="/admin/analytics" legacyBehavior passHref>
-              <NavigationMenuLink>Analytics</NavigationMenuLink>
+              <NavigationMenuLink>
+                <AnalyticsIcon color="#000000" />
+                Analytics
+              </NavigationMenuLink>
             </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem className="hover:bg-transparent ml-auto md:mr-4">
+              <Avatar>
+                <AvatarImage src="" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
           </NavigationMenuItem>
           <NavigationMenuIndicator />
         </NavigationMenuList>
