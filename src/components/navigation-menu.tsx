@@ -30,7 +30,7 @@ const NavigationMenuList = React.forwardRef<
   <NavigationMenuPrimitive.List
     ref={ref}
     className={cn(
-      "rounded-full sm:justify-start w-screen items-center justify-center flex flex-grow overflow-x-auto bg-white h-16 gap-2 md:gap-4",
+      "justify-evenly rounded-0 md:rounded-full md:justify-start w-screen items-center md:justify-center flex flex-grow overflow-x-auto bg-white h-16 gap-2 md:gap-4",
       className
     )}
     {...props}
@@ -45,7 +45,7 @@ const NavigationMenuItem = React.forwardRef<
   <NavigationMenuPrimitive.Item
     ref={ref}
     className={cn(
-      "max-w-fit hover:bg-slate-100 rounded-lg ease-in-out duration-200",
+      " border-b-2 border-transparent hover:border-slate-500 focus:border-slate-500 md:hover:border-transparent md:hover:border-transparent text-xs md:text-sm max-w-fit md:hover:bg-slate-100 md:rounded-lg ease-in-out duration-200",
       className
     )}
     {...props}
@@ -97,7 +97,7 @@ const NavigationMenuLink = React.forwardRef<
   <NavigationMenuPrimitive.Link
     ref={ref}
     className={cn(
-      "p-2 font-semibold antialiased inline-block flex focus:outline-none outline-transparent group items-center justify-center relative text-center py-3 flex-1 md:flex-none",
+      "flex-col md:flex-row p-2 font-semibold antialiased inline-block flex focus:outline-none outline-transparent group items-center justify-center relative text-center py-3 flex-1 md:flex-none",
       className
     )}
     {...props}

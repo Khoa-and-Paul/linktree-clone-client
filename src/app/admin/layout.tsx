@@ -27,8 +27,8 @@ export default function AdminLayout({
   return (
     <>
       <NavigationMenu>
-        <NavigationMenuList className="my-2.5">
-          <NavigationMenuItem className="md:ml-4 hover:bg-transparent">
+        <NavigationMenuList className="md:my-2.5">
+          <NavigationMenuItem className="hidden md:block md:ml-4 hover:bg-transparent">
             <Link href="/" legacyBehavior passHref>
               <NavigationMenuLink>
                 <LinkTreeIcon color="#000000" />
@@ -59,7 +59,7 @@ export default function AdminLayout({
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          <NavigationMenuItem className="hover:bg-transparent ml-auto md:mr-4">
+          <NavigationMenuItem className="hidden md:flex hover:bg-transparent md:ml-auto md:mr-4">
               <Avatar>
                 <AvatarImage src="" />
                 <AvatarFallback>CN</AvatarFallback>

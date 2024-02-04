@@ -1,6 +1,6 @@
 export default function LinkIcon({ color }: { color: string }) {
   return (
-    <svg style={{ paddingTop: "4px" }} width={24} height={24}>
+    <svg style={{ paddingTop: "4px", paddingLeft: "3px"}} width={24} height={24}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
