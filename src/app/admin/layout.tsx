@@ -59,7 +59,7 @@ export default function AdminLayout({
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          <NavigationMenuItem className="hidden md:flex hover:bg-transparent md:ml-auto md:mr-4">
+          <NavigationMenuItem className="rounded-full hidden md:flex md:hover:bg-transparent md:hover:border-2 md:hover:border-slate-500 md:ml-auto md:mr-4">
               <Avatar>
                 <AvatarImage src="" />
                 <AvatarFallback>CN</AvatarFallback>
